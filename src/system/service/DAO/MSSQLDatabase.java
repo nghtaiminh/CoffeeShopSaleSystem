@@ -19,7 +19,7 @@ public class MSSQLDatabase implements DatabaseConnector {
             + "localhost:1433;"
             + "databaseName=CoffeeShopSale;"
             + "user=SA;"
-            + "password=Ty Chuot 1998";
+            + "password=";
 
     @Override
     public Connection getConnection() throws SQLException, Exception {
