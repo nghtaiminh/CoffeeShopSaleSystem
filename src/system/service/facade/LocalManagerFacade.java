@@ -10,12 +10,12 @@ public class LocalManagerFacade extends SaleStaffFacade{
         this.localManagerDAO = new LocalManagerDAO();
     }
 
-    public void report(){
-        System.out.println(localManagerDAO.totalOrderOfADay());
-        System.out.println(localManagerDAO.totalRvenueOfADay());
+    public void report(int shopID, String date) throws Exception{
+        System.out.println(localManagerDAO.totalOrderOfADay(shopID, date));
+        System.out.println(localManagerDAO.totalRvenueOfADay(shopID, date));
     }
 
     public void setLocalPromotion(){
-        localManagerDAO.setPromotion();
+//        localManagerDAO.setPromotion();
     }
 }
