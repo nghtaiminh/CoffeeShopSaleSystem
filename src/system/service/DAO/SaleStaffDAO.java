@@ -1,11 +1,7 @@
 package system.service.DAO;
 
-import system.service.business.Order;
-import system.service.business.Product;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.HashMap;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
