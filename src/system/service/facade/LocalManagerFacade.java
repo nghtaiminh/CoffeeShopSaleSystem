@@ -15,7 +15,9 @@ public class LocalManagerFacade extends SaleStaffFacade{
         System.out.println(localManagerDAO.totalRvenueOfADay(shopID, date));
     }
 
-    public void setLocalPromotion(){
-//        localManagerDAO.setPromotion();
+    public void setLocalPromotion(int productID, int shopID, int discountPercentage,
+                                  String startDate, String endDate, int managerID) throws Exception {
+        localManagerDAO.setPromotion(productID, shopID, discountPercentage,
+                startDate, endDate, managerID);
     }
 }

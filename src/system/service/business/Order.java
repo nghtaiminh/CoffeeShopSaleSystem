@@ -5,26 +5,29 @@ import java.time.LocalDate;
 import java.util.HashMap;
 
 public class Order {
-    private Integer ID;
-    private Date date;
-    private HashMap<Product,Integer> orderList;
-    private String shopLocation;
 
-    public Order(String shopLocation){
+    private int ID;
+    private HashMap<Product,Integer> orderList;
+    private Date date;
+    private int shopID;
+
+    public Order(int shopID){
         this.date = Date.valueOf(LocalDate.now());
         this.orderList = new HashMap<>();
-        this.shopLocation = shopLocation;
+        this.shopID = shopID;
     }
+
 
     public Date getdDate() {
         return date;
     }
+
     public HashMap<Product,Integer> getOrderList(){
         return orderList;
     }
 
-    public String getShopLocation() {
-        return shopLocation;
+    public Integer getShopID() {
+        return shopID;
     }
 
     public void addOrder(Product product, int productQuantity) {

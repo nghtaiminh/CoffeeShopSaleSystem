@@ -1,5 +1,7 @@
 package system.service.business;
 
+import system.service.DAO.SaleStaffDAO;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,12 +9,25 @@ import java.util.List;
 public class Bill {
     private static Order order;
     private List<Double> eachProductPayment;
-    private double totalPayment;
-    Bill(Order order){
+    private Integer totalPrice;
+    private int totalDiscount;
+
+    public Bill(Order order){
         this.order = order;
         eachProductPayment = calculateEachProductPayment();
-        totalPayment = calculateTotalPayment();
+        totalPrice = calculateTotalPrice();
     }
+
+    private static void getTotalDiscount(Product productID) throws Exception {
+        Integer totalDiscount = 0;
+        var saleStaffDAO = new SaleStaffDAO();
+        Integer currentShopID = order.getShopID();
+        List<Product> listOfProductInTheOrder = saleStaffDAO.getListOfProductByShopID(currentShopID);
+        for(Product aProduct : listOfProductInTheOrder){
+
+        }
+    }
+
     private static List<Double> calculateEachProductPayment(){
         HashMap<Product,Integer> orderList = order.getOrderList();
         List<Double> eachProductPayment = new ArrayList<>();
@@ -24,16 +39,17 @@ public class Bill {
         return eachProductPayment;
     }
 
-    private static double calculateTotalPayment(){
+    private static Integer calculateTotalPrice(){
         HashMap<Product,Integer> orderList = order.getOrderList();
-        double payment = 0;
+        Integer payment = 0;
         for(Product product : orderList.keySet()){
             int productQuantity = orderList.get(product);
-            double productPrice = product.getPrice();
+            Integer productPrice = product.getPrice();
             payment = payment + productPrice*productQuantity;
         }
         return payment;
     }
+
     public void printBill(){
         HashMap<Product,Integer> orderList = order.getOrderList();
         int index = 0; // to get product payment
@@ -42,6 +58,6 @@ public class Bill {
             double productPayment = eachProductPayment.get(index);
             System.out.println(product.getName() +" , "+ productQuantity+" , "+ productPayment );
         }
-        System.out.println("Total payment " + totalPayment);
+        System.out.println("Total payment " + totalPrice);
     }
 }

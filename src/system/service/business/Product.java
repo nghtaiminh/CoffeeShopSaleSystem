@@ -1,6 +1,7 @@
 package system.service.business;
 
 public class Product {
+
     private int productID;
     private String name;
     private String category;
