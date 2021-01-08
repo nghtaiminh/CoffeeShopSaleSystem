@@ -59,7 +59,7 @@ public class LocalManagerDAO {
             if (i > 0){
                 System.out.println("Update Inventory Successfully!");
             } else {
-                System.out.println("Fail to Update Inventory");
+                throw new Exception("Fail to Update Inventory");
             }
             conn.close();
         }
@@ -82,7 +82,7 @@ public class LocalManagerDAO {
             if (i > 0) {
                 System.out.println("Insert Promotion Successsfully");
             } else {
-                System.out.println("Fail to Insert to Promotion");
+                throw new Exception("Fail to Insert to Promotion");
             }
             conn.close();
         }

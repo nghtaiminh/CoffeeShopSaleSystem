@@ -20,7 +20,7 @@ public class DatabaseConnector {
                     + "localhost:1433;"
                     + "databaseName=CoffeeShopSale;"
                     + "user=sa;"
-                    + "password=";
+                    + "password";
     
     private Connection conn;
     

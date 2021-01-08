@@ -25,8 +25,7 @@ public class SaleStaffDAO {
             if (i > 0){
                 System.out.println("Insert Order Successfully!");
             } else {
-                System.out.println("Fail to Insert Order");
-            }
+                throw new Exception("Fail to Insert Order");            }
             conn.close();
         }
         
@@ -87,7 +86,7 @@ public class SaleStaffDAO {
             if (i > 0){
                 System.out.println("Update Inventory Successfully!");
             } else {
-                System.out.println("Fail to Update Inventory");
+                throw new Exception("Fail to Update Inventory");
             }
             conn.close();
         }
