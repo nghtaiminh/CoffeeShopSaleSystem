@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="mssql-jdbc-8.2.2.jre111">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/snap/skype/common/mssql-jdbc-8.2.2.jre11.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
