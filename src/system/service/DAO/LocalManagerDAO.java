@@ -16,7 +16,7 @@ import java.sql.ResultSet;
 public class LocalManagerDAO {
     
     public int totalOrderOfADay(int shopID, String date) throws Exception {
-        String query = "SELECT COUNT(*) FROM [Order] WHERE shopiD = ? AND FORMAT(transactionDatetime, 'dd/MM/yyyy') = ?";
+        String query = "SELECT COUNT(*) FROM [Order] WHERE shopID = ? AND FORMAT(transactionDatetime, 'dd/MM/yyyy') = ?";
         Connection conn = DatabaseConnector.getInstance().getConnection();
         int nOrder = 0;
         PreparedStatement ps  = conn.prepareStatement(query);

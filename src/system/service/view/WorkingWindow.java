@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package system.service.facade.view;
+package system.service.view;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
